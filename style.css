@@ -1037,17 +1037,50 @@ section {
 }
 
 .expertise-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
+  display: block;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.marquee-row {
+  display: flex;
+  overflow: hidden;
+  gap: 1.2rem;
+  width: 100%;
+  margin-bottom: 2.5rem;
+  /* Space between rows */
+}
+
+.marquee-row:last-child {
+  margin-bottom: 0;
+}
+
+.expertise-tags {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 1.2rem;
+  width: max-content;
+  flex-shrink: 0;
+  animation: antMarch 45s linear infinite;
+  /* Slowed down */
+}
+
+@keyframes antMarch {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(calc(-100% - 1.2rem));
+  }
 }
 
 .expertise-category {
-  background: var(--cream);
-  padding: 2.5rem;
+  background: var(--sage-pale);
+  padding: 2.5rem 0;
   border-radius: 24px;
-  box-shadow: 0 10px 30px rgba(44, 62, 45, 0.06);
-  border: 1px solid rgba(122, 158, 126, 0.1);
+  overflow: hidden;
+  margin: 0 auto;
 }
 
 .expertise-category h3 {
@@ -1058,30 +1091,38 @@ section {
   margin-bottom: 1.5rem;
 }
 
-.expertise-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem;
-}
-
 .expertise-tag {
   background: transparent;
   color: var(--text);
-  padding: 0.5rem 1rem;
+  padding: 1.2rem 2rem;
   border-radius: 30px;
   font-size: 0.88rem;
   font-weight: 500;
   transition: all 0.3s ease;
   border: 1px solid rgba(122, 158, 126, 0.4);
+  position: relative;
+  margin-bottom: 24px;
+  /* Space for the ant below */
 }
 
-.expertise-tag:hover {
-  background: var(--terracotta);
-  color: #fff;
-  border-color: var(--terracotta-light);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(201, 123, 75, 0.2);
+.expertise-tag::after {
+  content: '';
+  position: absolute;
+  bottom: -22px;
+  /* Position ant below the tag */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  /* Adjusted ant size */
+  height: 20px;
+  background: url('media/ant_holding_transparent.png') no-repeat center center;
+  background-size: contain;
 }
+
+.marquee-row:nth-of-type(odd) .expertise-tag::after {
+  transform: translateX(-50%) scaleX(-1);
+}
+
 
 @media(max-width: 768px) {
   .expertise-grid {
@@ -1090,13 +1131,13 @@ section {
   }
 
   .expertise-category {
-    padding: 1.5rem;
+    padding: 1.5rem 0;
   }
 }
 
 @media(max-width: 480px) {
   .expertise-category {
-    padding: 1.25rem;
+    padding: 1.25rem 0;
   }
 
   .expertise-tags {
