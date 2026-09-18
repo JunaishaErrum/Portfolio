@@ -1572,6 +1572,13 @@ section {
   margin-bottom: .7rem;
 }
 
+.tl-company-sub {
+  font-size: 0.9rem;
+  color: var(--text);
+  font-weight: 500;
+  margin-bottom: .7rem;
+}
+
 .tl-desc {
   font-size: 1rem;
   line-height: 1.7;
@@ -1647,7 +1654,7 @@ section {
 }
 
 .employers-section {
-  background: var(--deep);
+  background: var(--cream);
   padding: 5rem;
   position: relative;
   overflow: hidden;
@@ -1702,7 +1709,7 @@ section {
 .employers-heading {
   font-family: 'Playfair Display', serif;
   font-size: 2.4rem;
-  color: #fff;
+  color: var(--deep);
   letter-spacing: -.02em;
   margin-bottom: 2.5rem;
   line-height: 1.2;
@@ -1715,11 +1722,11 @@ section {
 }
 
 .employer-card {
-  background: rgba(255, 255, 255, .05);
-  border: 1px solid rgba(255, 255, 255, .1);
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, .05);
   border-radius: 16px;
   padding: 2rem;
-  backdrop-filter: blur(4px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
 }
 
 .employer-card-icon {
@@ -1736,14 +1743,14 @@ section {
 .employer-subheading {
   font-family: 'Playfair Display', serif;
   font-size: 1.15rem;
-  color: var(--terracotta-light);
+  color: var(--deep);
   margin-bottom: .85rem;
 }
 
 .employer-text {
   font-size: .88rem;
   line-height: 1.75;
-  color: rgba(255, 255, 255, .62);
+  color: var(--text);
 }
 
 /* FOOTER */
