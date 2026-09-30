@@ -68,11 +68,50 @@
     </ul>
   </nav>
 
+  <div class="environmental-journey" aria-hidden="true">
+    <div class="env-layer env-sky"></div>
+    <div class="env-layer env-clouds-bg">
+      <div class="cloud cloud-1"></div>
+    </div>
+    <div class="env-layer env-sun">
+      <div class="the-sun"></div>
+    </div>
+    <div class="env-layer env-clouds-mid">
+      <div class="cloud cloud-2"></div>
+      <div class="distant-bird bird-1"></div>
+      <div class="distant-bird bird-2"></div>
+    </div>
+    <div class="env-layer env-clouds-fg">
+      <div class="cloud cloud-3"></div>
+      <div class="cloud cloud-soft"></div>
+    </div>
+    <div class="env-layer env-ground">
+      <div class="ground-texture"></div>
+      <div class="grass-layer grass-layer-1"></div>
+      <div class="grass-layer grass-layer-2"></div>
+      <!-- Ants -->
+      <div class="ant ant-1">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <circle cx="12" cy="12" r="3" fill="#3a4a3b" />
+          <path d="M12 9v6M9 12h6" stroke="#3a4a3b" stroke-width="2" />
+        </svg>
+      </div>
+      <div class="ant ant-2">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <circle cx="12" cy="12" r="3" fill="#3a4a3b" />
+          <path d="M12 9v6M9 12h6" stroke="#3a4a3b" stroke-width="2" />
+        </svg>
+      </div>
+      <div class="ant ant-3">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <circle cx="12" cy="12" r="3" fill="#3a4a3b" />
+          <path d="M12 9v6M9 12h6" stroke="#3a4a3b" stroke-width="2" />
+        </svg>
+      </div>
+    </div>
+  </div>
+
   <div class="sky-background-wrapper">
-    <div class="sky-layer" aria-hidden="true"></div>
-    <div class="cloud cloud-1" aria-hidden="true"></div>
-    <div class="cloud cloud-2" aria-hidden="true"></div>
-    <div class="cloud cloud-3" aria-hidden="true"></div>
     <!-- HERO -->
     <section class="hero" id="main-content" aria-label="Introduction">
 
@@ -134,9 +173,55 @@
       <div class="section-cloud sc-b" aria-hidden="true"></div>
       <div class="section-cloud sc-c" aria-hidden="true"></div>
       <div class="section-label">Selected Work</div>
-      <h2 class="projects-heading reveal" id="projects-heading">Three stories worth telling.</h2>
+      <h2 class="projects-heading reveal" id="projects-heading">Four stories worth telling.</h2>
       <div class="projects-grid">
         <article class="project-card card-1 reveal" tabindex="0">
+          <div class="project-img-container">
+            <video autoplay loop muted playsinline class="project-media">
+              <source src="media/uxmagic.mp4" type="video/mp4">
+            </video>
+            <span class="project-img-placeholder" aria-hidden="true"></span>
+            <div class="project-hover-overlay">
+              <a href="https://medium.com/@errumaisha/designing-uxmagic-from-ai-generation-to-a-complete-product-experience-c1e67587ba92?sharedUserId=errumaisha"
+                class="view-case-study-btn" tabindex="-1"
+                aria-label="View case study: From AI Generation to a Complete Product Experience">View Case Study →</a>
+            </div>
+          </div>
+          <div class="project-body">
+            <span class="project-tag">Product Design</span>
+            <span class="project-tag">AI-Powered Experiences</span>
+            <span class="project-tag">Interaction Design</span>
+            <h3 class="project-title">From AI Generation to a Complete Product Experience</h3>
+            <p class="project-desc">Designed and refined key UXMagic experiences across AI generation, editing,
+              publishing, and style controls to make a complex AI product easier to understand, use, and adopt.</p>
+          </div>
+        </article>
+
+        <article class="project-card card-2 reveal" tabindex="0">
+          <div class="project-img-container">
+            <video autoplay loop muted playsinline class="project-media">
+              <source src="media/travlo.mp4" type="video/mp4">
+            </video>
+            <!-- <img src="media/Travlo.png" alt="Travlo: UX Case Study" />
+          <span class="project-img-placeholder" aria-hidden="true"></span> -->
+            <div class="project-hover-overlay">
+              <a href="https://medium.com/@errumaisha/enhancing-first-time-user-experience-through-research-travlo-case-study-d24a5ee25dfe"
+                class="view-case-study-btn" tabindex="-1"
+                aria-label="View case study: Enhancing First-Time User Experience Through Research">View Case Study
+                →</a>
+            </div>
+          </div>
+          <div class="project-body">
+            <span class="project-tag">Internship Project</span>
+            <span class="project-tag">UX Research</span>
+            <span class="project-tag">Usability Testing</span>
+            <h3 class="project-title">Enhancing First-Time User Experience Through Research</h3>
+            <p class="project-desc">Uncovering usability gaps in AI-driven trip planning through first-time user
+              behavior analysis.</p>
+          </div>
+        </article>
+
+        <article class="project-card card-3 reveal" tabindex="0">
           <div class="project-img-container">
             <img src="media/designsystem-gif.gif" class="special-gif" alt="Design System" />
             <span class="project-img-placeholder" aria-hidden="true"></span>
@@ -156,60 +241,12 @@
               scalable, and reusable components across products.</p>
           </div>
         </article>
-        <article class="project-card card-2 reveal" tabindex="0">
-          <div class="project-img-container">
-            <video autoplay loop muted playsinline class="project-media">
-              <source src="media/travlo.mp4" type="video/mp4">
-            </video>
-            <!-- <img src="media/Travlo.png" alt="Travlo: UX Case Study" />
-          <span class="project-img-placeholder" aria-hidden="true"></span> -->
-            <div class="project-hover-overlay">
-              <a href="https://medium.com/@errumaisha/enhancing-first-time-user-experience-through-research-travlo-case-study-d24a5ee25dfe"
-                class="view-case-study-btn" tabindex="-1"
-                aria-label="View case study: Enhancing First-Time User Experience Through Research">View Case Study
-                →</a>
-            </div>
-          </div>
-          <div class="project-body">
-            <span class="project-tag">Internship Project</span>
-            <span class="project-tag">UX Research</span>
-            <!-- <span class="project-tag">Product Design</span> -->
-            <span class="project-tag">Usability Testing</span>
-            <h3 class="project-title">Enhancing First-Time User Experience Through Research</h3>
-            <p class="project-desc">Uncovering usability gaps in AI-driven trip planning through first-time user
-              behavior
-              analysis.</p>
-          </div>
-        </article>
-        <article class="project-card card-3 reveal" tabindex="0">
-          <div class="project-img-container">
-            <video autoplay loop muted playsinline class="project-media">
-              <source src="media/amazon wishlist.mp4" type="video/mp4">
-            </video>
-            <!-- <img src="media/amazonwishlist.gif" alt="Amazon-Filter-Redesign-Enhancing-Product-Discovery"/> -->
-            <span class="project-img-placeholder" aria-hidden="true"></span>
-            <div class="project-hover-overlay">
-              <a href="https://medium.com/@errumaisha/amazon-filter-redesign-enhancing-product-discovery-c3d96677d4b7"
-                class="view-case-study-btn" tabindex="-1"
-                aria-label="View case study: Enhancing Product Discovery Experience">View Case Study →</a>
-            </div>
-          </div>
-          <div class="project-body">
-            <span class="project-tag">Information Architecture</span>
-            <span class="project-tag">Mobile Experience</span>
-            <span class="project-tag">Usability Testing</span>
-            <span class="project-tag">Interaction Design</span>
-            <h3 class="project-title">Enhancing Product Discovery Experience</h3>
-            <p class="project-desc">Redesigned Amazon’s mobile filtering experience to help users find products more
-              efficiently.</p>
-          </div>
-        </article>
+
         <article class="project-card card-4 reveal" tabindex="0">
           <div class="project-img-container">
             <video autoplay loop muted playsinline class="project-media">
               <source src="media/CardFlow.mp4" type="video/mp4">
             </video>
-            <!-- <img src="media/amazonwishlist.gif" alt="Amazon-Filter-Redesign-Enhancing-Product-Discovery"/> -->
             <span class="project-img-placeholder" aria-hidden="true"></span>
             <div class="project-hover-overlay">
               <a href="https://medium.com/@errumaisha/from-transaction-tracking-to-financial-intelligence-rethinking-banking-ux-with-ai-373609c18dde"
@@ -961,6 +998,7 @@
       });
     }
   </script>
+  <script src="script.js"></script>
 </body>
 
 </html>
