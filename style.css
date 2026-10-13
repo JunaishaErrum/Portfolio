@@ -1,3 +1,54 @@
+/* FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Kite+One&family=Nunito:ital,wght@0,300..1000;1,300..1000&display=swap');
+
+@font-face {
+  font-family: 'Nunito';
+  src: url('fonts/nunito-font/NunitoRegular-vmABZ.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Nunito';
+  src: url('fonts/nunito-font/NunitoLight-K7dKW.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Nunito';
+  src: url('fonts/nunito-font/NunitoSemibold-w1G82.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Nunito';
+  src: url('fonts/nunito-font/NunitoBold-1GD50.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Nunito';
+  src: url('fonts/nunito-font/NunitoExtrabold-BW0lB.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Nunito';
+  src: url('fonts/nunito-font/NunitoItalic-MVZvp.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
 :root {
   --sage: #7a9e7e;
   --sage-light: #b5cdb8;
@@ -28,7 +79,7 @@ html {
 }
 
 body {
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Nunito', sans-serif;
   background: var(--cream);
   color: var(--text);
   overflow-x: hidden;
@@ -88,7 +139,7 @@ nav {
 }
 
 .nav-logo {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Kite One', sans-serif;
   font-size: 1.25rem;
   font-weight: 600;
   color: var(--deep);
@@ -653,13 +704,17 @@ nav {
 }
 
 .hero-name {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Kite One', sans-serif;
   font-size: clamp(2.8rem, 5.5vw, 4.8rem);
-  line-height: 1.1;
+  line-height: 1.15;
   color: var(--deep);
-  letter-spacing: -.03em;
-  margin-bottom: 2rem;
+  letter-spacing: -.02em;
+  margin-bottom: 1.5rem;
   animation: fadeUp .8s ease .15s both;
+}
+
+.hero-greeting {
+  margin-bottom: 0.2rem;
 }
 
 .hero-name em {
@@ -695,7 +750,7 @@ nav {
   color: #fff;
   border: none;
   border-radius: 24px;
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Nunito', sans-serif;
   font-size: .88rem;
   font-weight: 500;
   cursor: pointer;
@@ -717,7 +772,7 @@ nav {
   color: var(--deep);
   border: 1.5px solid rgba(44, 62, 45, .25);
   border-radius: 24px;
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Nunito', sans-serif;
   font-size: .88rem;
   font-weight: 500;
   cursor: pointer;
@@ -733,7 +788,7 @@ nav {
   color: var(--deep);
   border: 1.5px solid rgba(44, 62, 45, .25);
   border-radius: 24px;
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Nunito', sans-serif;
   font-size: .88rem;
   font-weight: 500;
   cursor: default;
@@ -785,7 +840,7 @@ nav {
   color: var(--deep);
   border: 1.5px solid rgba(44, 62, 45, .2);
   border-radius: 24px;
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Nunito', sans-serif;
   font-size: .88rem;
   font-weight: 500;
   cursor: pointer;
@@ -952,13 +1007,13 @@ section {
   font-weight: 600;
 }
 
-.section-label::before {
+/* .section-label::before {
   content: '';
   display: block;
   width: 28px;
   height: 1.5px;
   background: var(--terracotta);
-}
+} */
 
 /* ABOUT */
 .about-section {
@@ -1024,10 +1079,10 @@ section {
 }
 
 .about-heading {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Kite One', sans-serif;
   font-size: 2.3rem;
   color: var(--deep);
-  line-height: 1.2;
+  line-height: 1.25;
   margin-bottom: 1.5rem;
   letter-spacing: -.02em;
 }
@@ -1047,12 +1102,13 @@ section {
 }
 
 .expertise-heading {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Kite One', sans-serif;
   font-size: 2.2rem;
   color: var(--deep);
   margin-bottom: 2.5rem;
   text-align: center;
   letter-spacing: -0.02em;
+  line-height: 1.25;
 }
 
 .expertise-grid {
@@ -1103,11 +1159,12 @@ section {
 }
 
 .expertise-category h3 {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Kite One', sans-serif;
   font-weight: 600;
   font-size: 1.4rem;
   color: var(--sage-text);
   margin-bottom: 1.5rem;
+  line-height: 1.3;
 }
 
 .expertise-tag {
@@ -1177,11 +1234,12 @@ section {
 }
 
 .projects-heading {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Kite One', sans-serif;
   font-size: 2.6rem;
   color: var(--deep);
   margin-bottom: 3rem;
   letter-spacing: -.02em;
+  line-height: 1.25;
 }
 
 .projects-grid {
@@ -1223,7 +1281,7 @@ section {
 }
 
 .project-img-placeholder {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Kite One', sans-serif;
   font-size: 4rem;
   font-style: italic;
   color: rgba(122, 158, 126, .25);
@@ -1275,7 +1333,7 @@ section {
   color: #fff;
   border: none;
   border-radius: 24px;
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Nunito', sans-serif;
   font-size: .88rem;
   font-weight: 500;
   text-decoration: none;
@@ -1311,7 +1369,7 @@ section {
   font-weight: 600;
   color: var(--deep);
   margin-bottom: .6rem;
-  line-height: 1.25;
+  line-height: 1.35;
 }
 
 .project-desc {
@@ -1333,11 +1391,12 @@ section {
 }
 
 .pub-heading {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Kite One', sans-serif;
   font-size: 2.6rem;
   color: var(--deep);
   margin-bottom: .5rem;
   letter-spacing: -.02em;
+  line-height: 1.25;
 }
 
 .pub-subheading {
@@ -1418,17 +1477,19 @@ section {
 }
 
 .hobbies-heading {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.6rem;
+  font-family: 'Kite One', cursive, sans-serif;
+  font-size: 2.7rem;
   color: var(--deep);
   margin-bottom: .5rem;
-  letter-spacing: -.02em;
+  letter-spacing: -.01em;
+  line-height: 1.25;
 }
 
 .hobbies-sub {
   font-size: 1rem;
   color: var(--text);
   margin-bottom: 2rem;
+  line-height: 1.7;
 }
 
 .hobbies-grid {
@@ -1459,7 +1520,7 @@ section {
   justify-content: center;
   font-size: 2.5rem;
   color: rgba(122, 158, 126, .3);
-  font-family: 'Playfair Display', serif;
+  font-family: 'Kite One', cursive, sans-serif;
   font-style: italic;
   position: relative;
   overflow: hidden;
@@ -1482,10 +1543,12 @@ section {
 }
 
 .hobby-title {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Nunito', sans-serif;
   font-size: 1rem;
+  font-weight: 700;
   color: var(--deep);
   margin-bottom: .3rem;
+  line-height: 1.35;
 }
 
 .hobby-desc {
@@ -1496,11 +1559,12 @@ section {
 
 /* EXPERIENCE */
 .exp-heading {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.6rem;
+  font-family: 'Kite One', cursive, sans-serif;
+  font-size: 2.7rem;
   color: var(--deep);
   margin-bottom: 3.5rem;
-  letter-spacing: -.02em;
+  letter-spacing: -.01em;
+  line-height: 1.25;
 }
 
 .exp-header {
@@ -1578,10 +1642,11 @@ section {
 }
 
 .tl-role {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.4rem;
+  font-family: 'Kite One', cursive, sans-serif;
+  font-size: 1.5rem;
   color: var(--deep);
   font-weight: 600;
+  line-height: 1.3;
 }
 
 .tl-period {
@@ -1734,12 +1799,12 @@ section {
 }
 
 .employers-heading {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.4rem;
+  font-family: 'Kite One', cursive, sans-serif;
+  font-size: 2.5rem;
   color: var(--deep);
-  letter-spacing: -.02em;
+  letter-spacing: -.01em;
   margin-bottom: 2.5rem;
-  line-height: 1.2;
+  line-height: 1.25;
 }
 
 .employers-grid {
@@ -1768,10 +1833,12 @@ section {
 }
 
 .employer-subheading {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Nunito', sans-serif;
   font-size: 1.15rem;
+  font-weight: 700;
   color: var(--deep);
   margin-bottom: .85rem;
+  line-height: 1.35;
 }
 
 .employer-text {
@@ -1798,10 +1865,11 @@ footer {
 }
 
 .footer-brand {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.5rem;
+  font-family: 'Kite One', cursive, sans-serif;
+  font-size: 1.6rem;
   color: #fff;
   margin-bottom: .85rem;
+  line-height: 1.3;
 }
 
 .footer-tagline {
@@ -1998,7 +2066,8 @@ footer {
   right: 0;
   text-align: center;
   color: var(--deep);
-  font-family: 'Playfair Display', serif;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
   font-size: 1.1rem;
   opacity: 0;
   transition: opacity 0.3s, bottom 0.3s;
@@ -2158,7 +2227,7 @@ footer {
   background: rgba(255, 255, 255, 0.8);
   padding: .5rem .75rem;
   border-radius: 24px;
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Nunito', sans-serif;
   font-size: 0.88rem;
   color: var(--muted);
   pointer-events: none;
@@ -2673,13 +2742,13 @@ footer {
 }
 
 .footer-heading {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Kite One', cursive, sans-serif;
   font-size: clamp(2.4rem, 4vw, 3.2rem);
   color: var(--terracotta-light);
-  font-style: italic;
+  font-style: normal;
   margin-bottom: 1.5rem;
-  letter-spacing: -.02em;
-  line-height: 1.2;
+  letter-spacing: -.01em;
+  line-height: 1.25;
 }
 
 .footer-description {
