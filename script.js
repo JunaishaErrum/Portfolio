@@ -1,19 +1,19 @@
 document.addEventListener('DOMContentLoaded', () => {
   const envJourney = document.querySelector('.environmental-journey');
   const envSky = document.querySelector('.env-sky');
-  
+
   if (!envJourney) return;
 
-  const pubSection = document.querySelector('.pub-section'); 
-  const hobbiesSection = document.querySelector('.hobbies-section'); 
-  const aboutSection = document.querySelector('.about-section'); 
-  const expSection = document.querySelector('#experience'); 
+  const pubSection = document.querySelector('.pub-section');
+  const hobbiesSection = document.querySelector('.hobbies-section');
+  const aboutSection = document.querySelector('.about-section');
+  const expSection = document.querySelector('#experience');
 
   function updateScroll() {
     const scrollY = window.scrollY;
     const maxScroll = document.body.scrollHeight - window.innerHeight;
     const scrollP = Math.min(Math.max(scrollY / maxScroll, 0), 1);
-    
+
     envJourney.style.setProperty('--scroll-p', scrollP);
 
     let skyColor = '#a8c8d8';
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const sunRange = hobbiesBottom - pubTop;
         const sunScroll = (scrollY + window.innerHeight) - pubTop;
         const rawSunP = Math.min(Math.max(sunScroll / sunRange, 0), 1);
-        sunP = Math.sin(rawSunP * Math.PI); 
+        sunP = Math.sin(rawSunP * Math.PI);
       }
     }
     envJourney.style.setProperty('--sun-p', sunP);

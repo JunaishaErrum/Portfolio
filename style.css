@@ -688,7 +688,7 @@ nav {
   padding: .75rem 1rem;
   background: var(--sage-pale);
   border-radius: 24px;
-  font-size: .88rem;
+  font-size: 18px;
   font-weight: 600;
   letter-spacing: .08em;
   text-transform: uppercase;
@@ -705,7 +705,7 @@ nav {
 
 .hero-name {
   font-family: 'Kite One', sans-serif;
-  font-size: clamp(2.8rem, 5.5vw, 4.8rem);
+  font-size: 92px;
   line-height: 1.15;
   color: var(--deep);
   letter-spacing: -.02em;
@@ -724,7 +724,7 @@ nav {
 .hero-sub {
   margin-top: 0;
   margin-bottom: 1.25rem;
-  font-size: 1rem;
+  font-size: 18px;
   color: var(--text);
   line-height: 1.7;
   font-weight: 400;
@@ -751,7 +751,7 @@ nav {
   border: none;
   border-radius: 24px;
   font-family: 'Nunito', sans-serif;
-  font-size: .88rem;
+  font-size: 18px;
   font-weight: 500;
   cursor: pointer;
   text-decoration: none;
@@ -773,7 +773,7 @@ nav {
   border: 1.5px solid rgba(44, 62, 45, .25);
   border-radius: 24px;
   font-family: 'Nunito', sans-serif;
-  font-size: .88rem;
+  font-size: 18px;
   font-weight: 500;
   cursor: pointer;
   text-decoration: none;
@@ -789,7 +789,7 @@ nav {
   border: 1.5px solid rgba(44, 62, 45, .25);
   border-radius: 24px;
   font-family: 'Nunito', sans-serif;
-  font-size: .88rem;
+  font-size: 12px;
   font-weight: 500;
   cursor: default;
   user-select: none;
@@ -1000,7 +1000,7 @@ section {
   align-items: center;
   gap: 1rem;
   margin-bottom: 1rem;
-  font-size: .8rem;
+  font-size: 16px;
   letter-spacing: .15em;
   text-transform: uppercase;
   color: var(--terracotta);
@@ -1172,7 +1172,7 @@ section {
   color: var(--text);
   padding: 1.2rem 2rem;
   border-radius: 30px;
-  font-size: 0.88rem;
+  font-size: 12px;
   font-weight: 500;
   transition: all 0.3s ease;
   border: 1px solid rgba(122, 158, 126, 0.4);
@@ -1222,7 +1222,7 @@ section {
 
   .expertise-tag {
     padding: 0.4rem 0.8rem;
-    font-size: 0.8rem;
+    font-size: 12px;
   }
 }
 
@@ -1235,7 +1235,7 @@ section {
 
 .projects-heading {
   font-family: 'Kite One', sans-serif;
-  font-size: 2.6rem;
+  font-size: 56px;
   color: var(--deep);
   margin-bottom: 3rem;
   letter-spacing: -.02em;
@@ -1334,7 +1334,7 @@ section {
   border: none;
   border-radius: 24px;
   font-family: 'Nunito', sans-serif;
-  font-size: .88rem;
+  font-size: 18px;
   font-weight: 500;
   text-decoration: none;
   cursor: pointer;
@@ -1356,7 +1356,7 @@ section {
   padding: .5rem .75rem;
   background: var(--sage-pale);
   border-radius: 24px;
-  font-size: .8rem;
+  font-size: 12px;
   letter-spacing: .06em;
   text-transform: uppercase;
   color: var(--sage-text);
@@ -1365,7 +1365,7 @@ section {
 }
 
 .project-title {
-  font-size: 1.3rem;
+  font-size: 22px;
   font-weight: 600;
   color: var(--deep);
   margin-bottom: .6rem;
@@ -1373,7 +1373,7 @@ section {
 }
 
 .project-desc {
-  font-size: .88rem;
+  font-size: 16px;
   line-height: 1.7;
   color: var(--text);
   font-weight: 500;
@@ -1392,7 +1392,7 @@ section {
 
 .pub-heading {
   font-family: 'Kite One', sans-serif;
-  font-size: 2.6rem;
+  font-size: 56px;
   color: var(--deep);
   margin-bottom: .5rem;
   letter-spacing: -.02em;
@@ -1400,7 +1400,7 @@ section {
 }
 
 .pub-subheading {
-  font-size: 1rem;
+  font-size: 18px;
   color: var(--text);
   margin-bottom: 3rem;
 }
@@ -1451,14 +1451,14 @@ section {
 }
 
 .pub-title {
-  font-size: 1.09rem;
+  font-size: 22px;
   color: var(--deep);
   line-height: 1.3;
   margin-bottom: .5rem;
 }
 
 .pub-excerpt {
-  font-size: .88rem;
+  font-size: 16px;
   color: var(--text);
   line-height: 1.65;
   font-weight: 500;
@@ -1791,7 +1791,7 @@ section {
   background: rgba(201, 123, 75, .2);
   border: 1px solid rgba(201, 123, 75, .35);
   border-radius: 20px;
-  font-size: .72rem;
+  font-size: 12px;
   letter-spacing: .1em;
   text-transform: uppercase;
   color: var(--terracotta-light);
@@ -2663,7 +2663,7 @@ footer {
 
 /* Hero Texts */
 .hero-greeting {
-  font-size: 3.1rem;
+  font-size: 92px;
   margin-bottom: 0;
 }
 
