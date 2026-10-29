@@ -705,7 +705,7 @@ nav {
 
 .hero-name {
   font-family: 'Kite One', sans-serif;
-  font-size: 92px;
+  font-size: clamp(2.4rem, 6.5vw, 92px);
   line-height: 1.15;
   color: var(--deep);
   letter-spacing: -.02em;
@@ -714,7 +714,8 @@ nav {
 }
 
 .hero-greeting {
-  margin-bottom: 0.2rem;
+  font-size: clamp(2.4rem, 6.5vw, 92px);
+  margin-bottom: clamp(0.75rem, 2vw, 1.25rem);
 }
 
 .hero-name em {
@@ -724,7 +725,7 @@ nav {
 .hero-sub {
   margin-top: 0;
   margin-bottom: 1.25rem;
-  font-size: 18px;
+  font-size: clamp(1rem, 2.2vw, 1.125rem);
   color: var(--text);
   line-height: 1.7;
   font-weight: 400;
@@ -745,14 +746,14 @@ nav {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: .75rem 1rem;
+  padding: .75rem 1.25rem;
   background: var(--terracotta);
   color: #fff;
   border: none;
   border-radius: 24px;
   font-family: 'Nunito', sans-serif;
-  font-size: 18px;
-  font-weight: 500;
+  font-size: clamp(0.95rem, 1.8vw, 1.1rem);
+  font-weight: 600;
   cursor: pointer;
   text-decoration: none;
   transition: background .3s, transform .2s, box-shadow .2s;
@@ -768,13 +769,13 @@ nav {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: .75rem 1rem;
+  padding: .75rem 1.25rem;
   color: var(--deep);
   border: 1.5px solid rgba(44, 62, 45, .25);
   border-radius: 24px;
   font-family: 'Nunito', sans-serif;
-  font-size: 18px;
-  font-weight: 500;
+  font-size: clamp(0.95rem, 1.8vw, 1.1rem);
+  font-weight: 600;
   cursor: pointer;
   text-decoration: none;
   transition: all .3s;
@@ -784,13 +785,13 @@ nav {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: .75rem 1rem;
+  padding: .75rem 1.25rem;
   color: var(--deep);
   border: 1.5px solid rgba(44, 62, 45, .25);
   border-radius: 24px;
   font-family: 'Nunito', sans-serif;
-  font-size: 12px;
-  font-weight: 500;
+  font-size: clamp(0.95rem, 1.8vw, 1.1rem);
+  font-weight: 600;
   cursor: default;
   user-select: none;
   background: transparent;
@@ -1080,7 +1081,7 @@ section {
 
 .about-heading {
   font-family: 'Kite One', sans-serif;
-  font-size: 2.3rem;
+  font-size: clamp(1.85rem, 4vw, 2.3rem);
   color: var(--deep);
   line-height: 1.25;
   margin-bottom: 1.5rem;
@@ -1088,7 +1089,7 @@ section {
 }
 
 .about-text {
-  font-size: 1rem;
+  font-size: clamp(0.95rem, 1.8vw, 1.05rem);
   line-height: 1.85;
   font-weight: 500;
   color: var(--text);
@@ -1103,7 +1104,7 @@ section {
 
 .expertise-heading {
   font-family: 'Kite One', sans-serif;
-  font-size: 2.2rem;
+  font-size: clamp(1.8rem, 3.8vw, 2.2rem);
   color: var(--deep);
   margin-bottom: 2.5rem;
   text-align: center;
@@ -1172,8 +1173,8 @@ section {
   color: var(--text);
   padding: 1.2rem 2rem;
   border-radius: 30px;
-  font-size: 12px;
-  font-weight: 500;
+  font-size: clamp(0.95rem, 1.8vw, 1.1rem);
+  font-weight: 600;
   transition: all 0.3s ease;
   border: 1px solid rgba(122, 158, 126, 0.4);
   position: relative;
@@ -1217,12 +1218,12 @@ section {
   }
 
   .expertise-tags {
-    gap: 0.4rem;
+    gap: 0.6rem;
   }
 
   .expertise-tag {
-    padding: 0.4rem 0.8rem;
-    font-size: 12px;
+    padding: 0.6rem 1rem;
+    font-size: clamp(0.85rem, 3.2vw, 0.95rem);
   }
 }
 
@@ -1235,7 +1236,7 @@ section {
 
 .projects-heading {
   font-family: 'Kite One', sans-serif;
-  font-size: 56px;
+  font-size: clamp(2rem, 5vw, 56px);
   color: var(--deep);
   margin-bottom: 3rem;
   letter-spacing: -.02em;
@@ -1365,7 +1366,7 @@ section {
 }
 
 .project-title {
-  font-size: 22px;
+  font-size: clamp(1.2rem, 2.4vw, 22px);
   font-weight: 600;
   color: var(--deep);
   margin-bottom: .6rem;
@@ -1373,7 +1374,7 @@ section {
 }
 
 .project-desc {
-  font-size: 16px;
+  font-size: clamp(0.95rem, 1.8vw, 16px);
   line-height: 1.7;
   color: var(--text);
   font-weight: 500;
@@ -1392,7 +1393,7 @@ section {
 
 .pub-heading {
   font-family: 'Kite One', sans-serif;
-  font-size: 56px;
+  font-size: clamp(2rem, 5vw, 56px);
   color: var(--deep);
   margin-bottom: .5rem;
   letter-spacing: -.02em;
@@ -1400,7 +1401,7 @@ section {
 }
 
 .pub-subheading {
-  font-size: 18px;
+  font-size: clamp(1rem, 2vw, 18px);
   color: var(--text);
   margin-bottom: 3rem;
 }
@@ -1451,14 +1452,14 @@ section {
 }
 
 .pub-title {
-  font-size: 22px;
+  font-size: clamp(1.15rem, 2.2vw, 22px);
   color: var(--deep);
   line-height: 1.3;
   margin-bottom: .5rem;
 }
 
 .pub-excerpt {
-  font-size: 16px;
+  font-size: clamp(0.92rem, 1.8vw, 16px);
   color: var(--text);
   line-height: 1.65;
   font-weight: 500;
@@ -1466,7 +1467,7 @@ section {
 
 .pub-meta {
   margin-top: .85rem;
-  font-size: .75rem;
+  font-size: clamp(0.75rem, 1.4vw, 0.85rem);
   color: var(--sage);
   font-weight: 500;
 }
@@ -1478,7 +1479,7 @@ section {
 
 .hobbies-heading {
   font-family: 'Kite One', cursive, sans-serif;
-  font-size: 2.7rem;
+  font-size: clamp(1.85rem, 4.5vw, 2.7rem);
   color: var(--deep);
   margin-bottom: .5rem;
   letter-spacing: -.01em;
@@ -1486,7 +1487,7 @@ section {
 }
 
 .hobbies-sub {
-  font-size: 1rem;
+  font-size: clamp(0.95rem, 1.8vw, 1.1rem);
   color: var(--text);
   margin-bottom: 2rem;
   line-height: 1.7;
@@ -1544,7 +1545,7 @@ section {
 
 .hobby-title {
   font-family: 'Nunito', sans-serif;
-  font-size: 1rem;
+  font-size: clamp(0.95rem, 1.6vw, 1.05rem);
   font-weight: 700;
   color: var(--deep);
   margin-bottom: .3rem;
@@ -1552,7 +1553,7 @@ section {
 }
 
 .hobby-desc {
-  font-size: .82rem;
+  font-size: clamp(0.82rem, 1.4vw, 0.9rem);
   color: var(--muted);
   line-height: 1.6;
 }
@@ -1560,7 +1561,7 @@ section {
 /* EXPERIENCE */
 .exp-heading {
   font-family: 'Kite One', cursive, sans-serif;
-  font-size: 2.7rem;
+  font-size: clamp(1.85rem, 4.5vw, 2.7rem);
   color: var(--deep);
   margin-bottom: 3.5rem;
   letter-spacing: -.01em;
@@ -1800,7 +1801,7 @@ section {
 
 .employers-heading {
   font-family: 'Kite One', cursive, sans-serif;
-  font-size: 2.5rem;
+  font-size: clamp(1.85rem, 4.5vw, 2.5rem);
   color: var(--deep);
   letter-spacing: -.01em;
   margin-bottom: 2.5rem;
@@ -1944,8 +1945,10 @@ footer {
 }
 
 .footer-copy {
-  font-size: .78rem;
-  color: rgba(255, 255, 255, .28);
+  font-size: clamp(0.82rem, 1.4vw, 0.9rem);
+  color: rgba(255, 255, 255, 0.75);
+  font-weight: 500;
+  letter-spacing: 0.02em;
 }
 
 .social-row {
@@ -1993,7 +1996,7 @@ footer {
   position: relative;
   width: 100%;
   overflow: hidden;
-  background: linear-gradient(180deg, var(--sky-pale) 0%, rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(180deg, var(--sky-pale) 0%, rgba(250, 246, 239, 0.4) 40%, rgba(242, 232, 213, 0.8) 85%, var(--warm) 100%);
 }
 
 .sc-main-container {
@@ -2422,6 +2425,14 @@ footer {
     max-width: 100%;
   }
 
+  .hero-name {
+    font-size: clamp(2.2rem, 5.5vw, 3.8rem);
+  }
+
+  .hero-greeting {
+    margin-bottom: 0.85rem;
+  }
+
   .hero-cta {
     justify-content: center;
     flex-wrap: wrap;
@@ -2493,7 +2504,12 @@ footer {
 
 @media(max-width:480px) {
   .hero-name {
-    font-size: 2.4rem;
+    font-size: clamp(1.85rem, 8.5vw, 2.35rem);
+    line-height: 1.2;
+  }
+
+  .hero-greeting {
+    margin-bottom: 0.65rem;
   }
 
   .btn-primary,
@@ -2663,8 +2679,7 @@ footer {
 
 /* Hero Texts */
 .hero-greeting {
-  font-size: 92px;
-  margin-bottom: 0;
+  color: var(--deep);
 }
 
 .hero-title {
@@ -2727,6 +2742,15 @@ footer {
 /* Experience */
 .exp-section-override {
   margin-top: 0px;
+  padding-bottom: 6rem;
+  position: relative;
+  background: linear-gradient(180deg, transparent 0%, rgba(200, 232, 213, 0.15) 35%, rgba(122, 158, 126, 0.25) 60%, rgba(68, 92, 70, 0.6) 85%, #2c3e2d 100%);
+}
+
+footer {
+  background: #2c3e2d;
+  position: relative;
+  margin-top: -1px;
 }
 
 /* Footer */
@@ -3015,8 +3039,8 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  transform: translateY(calc(100vh - (var(--sun-p) * 150vh)));
-  opacity: calc(var(--sun-p) * 2);
+  transform: translateY(calc(70vh - (var(--sun-p) * 70vh)));
+  opacity: calc(var(--sun-p) * 1.5);
 }
 
 .the-sun {

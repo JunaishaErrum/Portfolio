@@ -27,14 +27,16 @@ document.addEventListener('DOMContentLoaded', () => {
     envSky.style.backgroundColor = skyColor;
 
     let sunP = 0;
-    if (pubSection && hobbiesSection) {
-      const pubTop = pubSection.offsetTop;
-      const hobbiesBottom = hobbiesSection.offsetTop + hobbiesSection.offsetHeight;
-      if (scrollY + window.innerHeight > pubTop && scrollY < hobbiesBottom) {
-        const sunRange = hobbiesBottom - pubTop;
-        const sunScroll = (scrollY + window.innerHeight) - pubTop;
-        const rawSunP = Math.min(Math.max(sunScroll / sunRange, 0), 1);
-        sunP = Math.sin(rawSunP * Math.PI);
+    if (hobbiesSection) {
+      const hobbiesTop = hobbiesSection.offsetTop;
+      const hobbiesHeight = hobbiesSection.offsetHeight;
+      const hobbiesMid = hobbiesTop + hobbiesHeight / 2;
+      const scrollMid = scrollY + window.innerHeight / 2;
+      const distFromMid = scrollMid - hobbiesMid;
+      const viewRange = window.innerHeight * 0.9;
+      if (Math.abs(distFromMid) < viewRange) {
+        sunP = Math.cos((distFromMid / viewRange) * (Math.PI / 2));
+        sunP = Math.max(0, Math.min(1, sunP));
       }
     }
     envJourney.style.setProperty('--sun-p', sunP);
