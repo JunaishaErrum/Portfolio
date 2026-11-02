@@ -76,6 +76,8 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 body {
@@ -83,6 +85,8 @@ body {
   background: var(--cream);
   color: var(--text);
   overflow-x: hidden;
+  max-width: 100%;
+  position: relative;
 }
 
 /* SKIP LINK */
@@ -363,13 +367,13 @@ nav {
   }
 
   100% {
-    transform: translateX(calc(100vw + 120px));
+    transform: translateX(calc(100% + 120px));
   }
 }
 
 @keyframes cloudDrift2 {
   0% {
-    transform: translateX(calc(100vw + 80px));
+    transform: translateX(calc(100% + 80px));
   }
 
   100% {
@@ -2248,8 +2252,7 @@ footer {
   }
 
   .sc-hint {
-    font-size: 1.1rem;
-    top: -10px;
+    display: none !important;
   }
 
   .sc-wheel {
@@ -2260,6 +2263,13 @@ footer {
   .carousel-cloud,
   .c-flower {
     display: none;
+  }
+}
+
+/* Hide on touchscreens and devices where a mouse cannot be used */
+@media (hover: none), (pointer: coarse) {
+  .sc-hint {
+    display: none !important;
   }
 }
 
@@ -2352,6 +2362,12 @@ footer {
 
   nav {
     padding: 0 1.25rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1000;
   }
 
   .nav-toggle {
@@ -2364,14 +2380,16 @@ footer {
     top: 100%;
     left: 0;
     right: 0;
-    background: rgba(250, 246, 239, .97);
+    width: 100%;
+    background: rgba(250, 246, 239, .98);
     backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     flex-direction: column;
     gap: 0;
     padding: .5rem 0 1rem;
     border-bottom: 1px solid rgba(122, 158, 126, .2);
     box-shadow: 0 8px 24px rgba(44, 62, 45, .08);
-    z-index: 99;
+    z-index: 999;
   }
 
   .nav-links.open {
