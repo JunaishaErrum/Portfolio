@@ -1101,9 +1101,15 @@ section {
 }
 
 /* EXPERTISE / SKILLS */
-.expertise-section {
-  margin-top: 1rem;
+.skills-section {
+  padding: 4rem 3rem;
   background: var(--warm);
+  position: relative;
+}
+
+.expertise-section {
+  margin-top: 0;
+  background: transparent;
 }
 
 .expertise-heading {
@@ -3148,6 +3154,7 @@ body {
 .pub-section,
 .hobbies-section,
 .about-section,
+.skills-section,
 .expertise-section {
   background: transparent !important;
 }
