@@ -1794,7 +1794,7 @@ section {
 .project-img-container {
   width: 100%;
   height: clamp(280px, 50vw, 450px);
-  background: #000;
+  background: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
