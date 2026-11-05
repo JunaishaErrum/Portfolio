@@ -56,11 +56,11 @@
   --sage-text: #1F6F28;
   --cream: #faf6ef;
   --warm: #f2e8d5;
-  --terracotta: #ad6234;
+  --terracotta: #A34F2D;
   --terracotta-light: #e8a87c;
-  --deep: #2c3e2d;
-  --text: #3a4a3b;
-  --muted: #7a8c7b;
+  --deep: #293F32;
+  --text: #293F32;
+  --muted: #435A4B;
   --sky: #a8c8d8;
   --sky-pale: #d8eaf2;
   --sunflower: #f5c842;
@@ -245,6 +245,7 @@ nav {
   display: flex;
   align-items: center;
   padding-top: var(--nav-h);
+  background: transparent !important;
 }
 
 .sky-layer {
@@ -1022,7 +1023,8 @@ section {
 
 /* ABOUT */
 .about-section {
-  background: var(--warm);
+  position: relative;
+  background: transparent !important;
 }
 
 .about-grid {
@@ -1100,26 +1102,530 @@ section {
   margin-bottom: 1.1rem;
 }
 
-/* EXPERTISE / SKILLS */
+/* SKILLS SECTION & ANTHILL INTERACTIVE */
 .skills-section {
-  padding: 4rem 3rem;
-  background: var(--warm);
+  padding: 6rem 2rem 5rem;
   position: relative;
+  background: transparent !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  min-height: 520px;
+}
+
+.skills-anthill-wrapper {
+  width: 100%;
+  max-width: 780px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+.expertise-heading {
+  font-family: 'Kite One', sans-serif;
+  font-size: clamp(1.8rem, 3.8vw, 2.35rem);
+  color: var(--deep);
+  margin-bottom: 3.5rem;
+  text-align: center;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+}
+
+/* Anthill Interactive Container */
+.anthill-interactive-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background: transparent;
+  padding: 0;
+  border-radius: 40px;
+  position: relative;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.4s ease;
+}
+
+.anthill-art {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.anthill-svg {
+  width: 100%;
+  max-width: 530px;
+  height: auto;
+  display: block;
+  overflow: visible;
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transform-origin: center bottom;
+}
+
+/* Hover: Scale up (approx 1.03x) and gentle curious wiggle */
+.anthill-interactive-container:hover .anthill-svg,
+.anthill-interactive-container:focus-visible .anthill-svg {
+  transform: scale(1.035);
+  animation: anthillWiggle 2.2s ease-in-out infinite alternate;
+}
+
+.anthill-interactive-container:focus-visible {
+  outline: 3px dashed var(--terracotta);
+  outline-offset: 8px;
+}
+
+@keyframes anthillWiggle {
+  0% {
+    transform: scale(1.035) rotate(0deg);
+  }
+
+  25% {
+    transform: scale(1.04) rotate(-1deg);
+  }
+
+  75% {
+    transform: scale(1.04) rotate(1deg);
+  }
+
+  100% {
+    transform: scale(1.035) rotate(0deg);
+  }
+}
+
+/* Integrated CTA: Tap to explore - Horizontally centered directly below anthill */
+.anthill-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 14px;
+  cursor: pointer;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.cta-label {
+  font-family: 'Kite One', cursive, sans-serif;
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: #3d2614;
+  letter-spacing: -0.01em;
+  background: rgba(250, 246, 239, 0.95);
+  padding: 0.35rem 0.85rem;
+  border-radius: 16px;
+  border: 1.5px solid rgba(61, 38, 20, 0.2);
+  box-shadow: 0 3px 10px rgba(61, 38, 20, 0.08);
+  white-space: nowrap;
+}
+
+.cta-arrow {
+  flex-shrink: 0;
+  display: block;
+  filter: drop-shadow(0 2px 4px rgba(61, 38, 20, 0.1));
+  animation: arrowNudge 1.6s ease-in-out infinite;
+  transform-origin: left center;
+}
+
+@keyframes arrowNudge {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+
+  50% {
+    transform: translateY(-4px) scale(1.05);
+  }
+}
+
+.anthill-interactive-container:hover .cta-arrow {
+  animation-duration: 0.9s;
+}
+
+/* Cracks animation state - initial: completely hidden with zero stroke length */
+.anthill-cracks {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.crack {
+  stroke-dasharray: 240;
+  stroke-dashoffset: 240;
+}
+
+/* Dust puff animation */
+.dust-puff {
+  opacity: 0;
+  transform-origin: center center;
+}
+
+/* State B: Cracking active state triggered on click/tap */
+.anthill-interactive-container.is-cracking {
+  pointer-events: none;
+  animation: anthillQuake 0.75s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+.anthill-interactive-container.is-cracking .anthill-cta {
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.85);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.anthill-interactive-container.is-cracking .anthill-cracks {
+  opacity: 1;
+}
+
+.anthill-interactive-container.is-cracking .crack-main {
+  animation: drawCrack 0.4s ease-out forwards;
+}
+
+.anthill-interactive-container.is-cracking .crack-left,
+.anthill-interactive-container.is-cracking .crack-right,
+.anthill-interactive-container.is-cracking .crack-sub {
+  animation: drawCrack 0.35s 0.12s ease-out forwards;
+}
+
+.anthill-interactive-container.is-cracking .dust-puff {
+  animation: popDustCloud 0.7s 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* State B -> C: short fade-out animation when breaking */
+.anthill-interactive-container.is-fading-out {
+  opacity: 0;
+  transform: scale(0.96) translateY(6px);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+@keyframes drawCrack {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes anthillQuake {
+  10%, 90% { transform: translate3d(-3px, 0, 0) rotate(-0.6deg); }
+  20%, 80% { transform: translate3d(3px, -2px, 0) rotate(0.8deg); }
+  30%, 50%, 70% { transform: translate3d(-4px, 1px, 0) rotate(-1deg); }
+  40%, 60% { transform: translate3d(4px, -1px, 0) rotate(1deg); }
+  100% { transform: translate3d(0, 0, 0) rotate(0deg); }
+}
+
+@keyframes popDustCloud {
+  0% {
+    opacity: 0;
+    transform: scale(0.3) translate(0, 0);
+  }
+  40% {
+    opacity: 0.85;
+    transform: scale(1.25) translate(var(--dp-x, 0px), var(--dp-y, -6px));
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.5) translate(calc(var(--dp-x, 0px) * 1.5), calc(var(--dp-y, -6px) - 8px));
+  }
+}
+
+.dp-1 { --dp-x: -12px; --dp-y: -14px; }
+.dp-2 { --dp-x: 14px; --dp-y: -18px; }
+.dp-3 { --dp-x: -16px; --dp-y: -8px; }
+.dp-4 { --dp-x: 16px; --dp-y: -10px; }
+.dp-5 { --dp-x: 2px; --dp-y: -20px; }
+
+/* State C: Rebuild Colony Button - Horizontally centered 32-40px BELOW the moving ants */
+.rebuild-action-wrap {
+  margin-top: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeInSoft 0.4s ease forwards;
+}
+
+.rebuild-colony-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--cream);
+  color: #3d2614;
+  border: 2px solid #3d2614;
+  border-radius: 28px;
+  padding: 0.6rem 1.5rem;
+  font-family: 'Kite One', cursive, sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(61, 38, 20, 0.1);
+  transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+  outline: none;
+}
+
+.rebuild-colony-btn:hover {
+  background: var(--terracotta);
+  color: #fff;
+  border-color: #3d2614;
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 6px 18px rgba(61, 38, 20, 0.16);
+}
+
+.rebuild-colony-btn:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.rebuild-colony-btn:focus-visible {
+  outline: 3px dashed var(--terracotta);
+  outline-offset: 4px;
+}
+
+.rebuild-icon {
+  display: inline-block;
+  font-size: 1.15rem;
+  transition: transform 0.4s ease;
+}
+
+.rebuild-colony-btn:hover .rebuild-icon {
+  transform: rotate(-180deg);
+}
+
+@keyframes fadeInSoft {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* State C: Ant Procession (Full-Width Continuous Loop Left to Right) */
+.ant-procession-container {
+  width: 100vw;
+  max-width: none;
+  position: relative;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  margin-top: 1rem;
+  padding: 0;
+  overflow: hidden;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  user-select: none;
+  animation: fadeInSoft 0.5s ease forwards;
+}
+
+.ant-march-viewport {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  padding: 1rem 0 1.2rem;
+  box-sizing: border-box;
+}
+
+.ant-march-track {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+  animation: antProcessionMarch var(--march-duration, 54s) linear infinite;
+}
+
+.ant-march-viewport:hover .ant-march-track {
+  animation-play-state: paused;
+}
+
+/* Moves from extreme LEFT to extreme RIGHT:
+   Track starts at x = -groupWidth so Group 2 fills the viewport from the left edge (0px),
+   and moves smoothly to x = 0 where Group 1 seamlessly occupies the exact same positions. */
+@keyframes antProcessionMarch {
+  0% {
+    transform: translateX(calc(-1 * var(--single-group-width, 50%)));
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Single Ant Unit Carrying Skill */
+.ant-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  margin: 0 2rem;
+  flex-shrink: 0;
+}
+
+/* Skill Container ("piece of candy / sugar cube / irregular food fragment") */
+.skill-carried-object {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1.1rem;
+  font-family: 'Kite One', cursive, sans-serif;
+  font-size: 0.96rem;
+  font-weight: 600;
+  color: #293F32;
+  border: 2.2px solid #3d2614;
+  border-radius: 18px 22px 16px 20px;
+  box-shadow: 0 3px 6px rgba(61, 38, 20, 0.12), inset 0 2px 0 rgba(255, 255, 255, 0.45);
+  white-space: nowrap;
+  position: relative;
+  z-index: 2;
+  margin-bottom: -18px; /* Arms reach up into container */
+  animation: candyBob 1.2s ease-in-out infinite alternate;
+  transform-origin: center bottom;
+}
+
+/* Pastel theme variations */
+.candy-cream {
+  background: #fbf5e8;
+  border-radius: 20px 16px 22px 18px;
+}
+
+.candy-peach {
+  background: #fde8db;
+  border-radius: 17px 23px 18px 21px;
+}
+
+.candy-sage {
+  background: #ddead1;
+  border-radius: 22px 17px 20px 16px;
+}
+
+.candy-yellow {
+  background: #fdf2cd;
+  border-radius: 19px 21px 16px 23px;
+}
+
+@keyframes candyBob {
+  0% {
+    transform: translateY(0) rotate(-1deg);
+  }
+  100% {
+    transform: translateY(-4px) rotate(1.2deg);
+  }
+}
+
+/* Ant Character SVG Illustration */
+.ant-character-svg {
+  width: 96px;
+  height: 96px;
+  display: block;
+  overflow: visible;
+  z-index: 1;
+}
+
+/* Walking leg cycle */
+.ant-leg-front-walk {
+  animation: legWalkCycleA 0.4s ease-in-out infinite alternate;
+  transform-origin: 52px 64px;
+}
+
+.ant-leg-mid-walk {
+  animation: legWalkCycleB 0.4s ease-in-out infinite alternate;
+  transform-origin: 44px 65px;
+}
+
+.ant-leg-back-walk {
+  animation: legWalkCycleA 0.4s 0.2s ease-in-out infinite alternate;
+  transform-origin: 32px 67px;
+}
+
+@keyframes legWalkCycleA {
+  0% {
+    transform: rotate(-14deg);
+  }
+  100% {
+    transform: rotate(14deg);
+  }
+}
+
+@keyframes legWalkCycleB {
+  0% {
+    transform: rotate(12deg);
+  }
+  100% {
+    transform: rotate(-12deg);
+  }
+}
+
+/* Ant body gentle step sway */
+.ant-unit-svg-wrap {
+  animation: antBodyBob 0.4s ease-in-out infinite alternate;
+  transform-origin: center bottom;
+}
+
+@keyframes antBodyBob {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-2px);
+  }
+}
+
+/* Antenna twitch */
+.ant-antenna {
+  animation: antennaWiggle 1.8s ease-in-out infinite alternate;
+  transform-origin: 64px 38px;
+}
+
+@keyframes antennaWiggle {
+  0% { transform: rotate(0deg); }
+  50% { transform: rotate(3deg); }
+  100% { transform: rotate(-2deg); }
+}
+
+/* Responsive tweaks for anthill */
+@media (max-width: 600px) {
+  .skills-section {
+    padding: 4.5rem 1.2rem 4rem;
+  }
+
+  .anthill-svg {
+    max-width: 360px;
+  }
+
+  .anthill-cta {
+    margin-top: 12px;
+  }
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .anthill-interactive-container:hover .anthill-svg {
+    transform: none;
+    animation: none;
+  }
+
+  .cta-arrow {
+    animation: none;
+  }
+
+  .anthill-interactive-container.is-cracking {
+    animation: none;
+  }
+
+  .ant-march-track {
+    animation: none !important;
+    overflow-x: auto;
+  }
+
+  .ant-leg-front-walk,
+  .ant-leg-mid-walk,
+  .ant-leg-back-walk,
+  .ant-unit-svg-wrap,
+  .skill-carried-object,
+  .ant-antenna {
+    animation: none !important;
+  }
 }
 
 .expertise-section {
   margin-top: 0;
   background: transparent;
-}
-
-.expertise-heading {
-  font-family: 'Kite One', sans-serif;
-  font-size: clamp(1.8rem, 3.8vw, 2.2rem);
-  color: var(--deep);
-  margin-bottom: 2.5rem;
-  text-align: center;
-  letter-spacing: -0.02em;
-  line-height: 1.25;
 }
 
 .expertise-grid {
@@ -1484,7 +1990,8 @@ section {
 
 /* WHEN NOT DESIGNING */
 .hobbies-section {
-  background: var(--cream);
+  position: relative;
+  background: transparent !important;
 }
 
 .hobbies-heading {
@@ -1671,7 +2178,7 @@ section {
 .tl-company {
   font-size: 1rem;
   color: var(--terracotta);
-  font-weight: 500;
+  font-weight: 600;
   margin-bottom: .7rem;
 }
 
@@ -1757,7 +2264,7 @@ section {
 }
 
 .employers-section {
-  background: var(--cream);
+  background: transparent !important;
   padding: 5rem;
   position: relative;
   overflow: hidden;
@@ -2273,7 +2780,8 @@ footer {
 }
 
 /* Hide on touchscreens and devices where a mouse cannot be used */
-@media (hover: none), (pointer: coarse) {
+@media (hover: none),
+(pointer: coarse) {
   .sc-hint {
     display: none !important;
   }
@@ -2768,11 +3276,11 @@ footer {
   margin-top: 0px;
   padding-bottom: 6rem;
   position: relative;
-  background: linear-gradient(180deg, transparent 0%, rgba(200, 232, 213, 0.15) 35%, rgba(122, 158, 126, 0.25) 60%, rgba(68, 92, 70, 0.6) 85%, #2c3e2d 100%);
+  background: transparent !important;
 }
 
 footer {
-  background: #2c3e2d;
+  background: transparent !important;
   position: relative;
   margin-top: -1px;
 }
@@ -2792,7 +3300,7 @@ footer {
 .footer-heading {
   font-family: 'Kite One', cursive, sans-serif;
   font-size: clamp(2.4rem, 4vw, 3.2rem);
-  color: var(--terracotta-light);
+  color: var(--deep);
   font-style: normal;
   margin-bottom: 1.5rem;
   letter-spacing: -.01em;
@@ -2802,22 +3310,23 @@ footer {
 .footer-description {
   font-size: 1rem;
   line-height: 1.7;
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--text);
   margin-bottom: 1rem;
   max-width: 540px;
 }
 
 .footer-email-link {
-  color: var(--terracotta-light);
-  font-size: 1rem;
-  font-weight: 500;
+  color: var(--terracotta);
+  font-size: 1.05rem;
+  font-weight: 700;
   text-decoration: none;
   margin-bottom: 2rem;
-  transition: opacity .2s;
+  transition: opacity .2s, color .2s;
 }
 
 .footer-email-link:hover {
-  opacity: 0.8;
+  color: var(--deep);
+  opacity: 0.85;
 }
 
 .footer-social-wrap {
@@ -2835,11 +3344,28 @@ footer {
   gap: 24px;
 }
 
+footer .social-btn {
+  background: rgba(255, 255, 255, 0.45);
+  border: 1px solid rgba(44, 62, 45, 0.15);
+  color: var(--deep);
+}
+
+footer .social-btn:hover {
+  background: var(--terracotta);
+  color: #fff;
+  border-color: transparent;
+}
+
 .footer-bottom-override {
   justify-content: center;
   position: relative;
   z-index: 2;
   margin-top: auto;
+  border-top-color: rgba(44, 62, 45, 0.12);
+}
+
+footer .footer-copy {
+  color: var(--text);
 }
 
 .tl-company-sub a {
@@ -3040,9 +3566,8 @@ footer {
 
 /* 1. Sky Color */
 .env-sky {
-  /* Sky transitions from blue -> cream -> yellow -> blue */
   background: var(--cream);
-  transition: background-color 0.1s linear;
+  transition: none;
 }
 
 /* 2. Parallax Clouds */
@@ -3060,17 +3585,24 @@ footer {
 
 /* 3. Sun */
 .env-sun {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transform: translateY(calc(70vh - (var(--sun-p) * 70vh)));
-  opacity: calc(var(--sun-p) * 1.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: calc(var(--sun-p, 0) * 1.5);
+  transition: opacity 0.2s ease-out;
 }
 
 .the-sun {
+  position: absolute;
+  left: 50%;
+  top: var(--sun-y, 50vh);
   width: 120px;
   height: 120px;
   border-radius: 50%;
+  transform: translate(-50%, -50%);
   background: radial-gradient(circle, #fff9c4 30%, #fdd835 60%, #f9a825 100%);
   box-shadow: 0 0 60px 30px rgba(253, 216, 53, .4), 0 0 100px 50px rgba(249, 168, 37, .2);
 }
@@ -3078,17 +3610,11 @@ footer {
 /* 4. Ground Descent */
 .env-ground {
   transform: translateY(calc(100vh - (var(--ground-p) * 100vh)));
-  background: linear-gradient(180deg, transparent 0%, var(--cream) 10%, #e2edd8 30%, #c8e8d5 100%);
+  background: transparent;
 }
 
 .grass-layer {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 30vh;
-  background-size: cover;
-  opacity: var(--greenery-p);
+  display: none;
 }
 
 /* 5. Ants Interaction */
@@ -3155,7 +3681,10 @@ body {
 .hobbies-section,
 .about-section,
 .skills-section,
-.expertise-section {
+.expertise-section,
+.exp-section-override,
+.employers-section,
+footer {
   background: transparent !important;
 }
 

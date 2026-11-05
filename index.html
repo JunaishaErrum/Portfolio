@@ -474,77 +474,197 @@
 
   <!-- SKILLS / EXPERTISE -->
   <section class="skills-section" id="skills" aria-labelledby="skills-heading">
-    <div class="expertise-section reveal">
+    <div class="skills-anthill-wrapper reveal">
       <h3 class="expertise-heading" id="skills-heading">A little colony of skills</h3>
-      <div class="expertise-grid">
-        <div class="expertise-category">
-          <!-- <h3>Design</h3> -->
 
-          <div class="marquee-row">
-            <div class="expertise-tags" style="animation-duration: 45s;">
-              <span class="expertise-tag">UX Design</span>
-              <span class="expertise-tag">UI Design</span>
-              <span class="expertise-tag">Information Architecture</span>
-              <span class="expertise-tag">User Research</span>
-              <span class="expertise-tag">Usability Testing</span>
-              <span class="expertise-tag">Interaction Design</span>
-              <span class="expertise-tag">Design Systems</span>
-            </div>
-            <div class="expertise-tags" aria-hidden="true" style="animation-duration: 45s;">
-              <span class="expertise-tag">UX Design</span>
-              <span class="expertise-tag">UI Design</span>
-              <span class="expertise-tag">Information Architecture</span>
-              <span class="expertise-tag">User Research</span>
-              <span class="expertise-tag">Usability Testing</span>
-              <span class="expertise-tag">Interaction Design</span>
-              <span class="expertise-tag">Design Systems</span>
-            </div>
-          </div>
+      <!-- Interactive Anthill Mound Area (State A & State B) -->
+      <div class="anthill-interactive-container" id="anthillInteractive" role="button" tabindex="0"
+        aria-label="Explore the anthill: click or press enter to crack open the colony">
+        <div class="anthill-art">
+          <svg viewBox="0 0 460 300" class="anthill-svg" aria-hidden="true">
+            <defs>
+              <filter id="handDrawnFilter" x="-5%" y="-5%" width="110%" height="110%">
+                <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="2" result="noise" />
+                <feDisplacementMap in="SourceGraphic" in2="noise" scale="1.8" xChannelSelector="R"
+                  yChannelSelector="G" />
+              </filter>
+            </defs>
+            <!-- Ground patch with warm earthy soil tone -->
+            <ellipse cx="230" cy="256" rx="205" ry="34" fill="#deb887" opacity="0.45" />
+            <ellipse cx="230" cy="254" rx="180" ry="24" fill="#cfa574" opacity="0.6" />
+            <ellipse cx="230" cy="252" rx="150" ry="16" fill="#bf9361" opacity="0.5" />
 
-          <div class="marquee-row">
-            <div class="expertise-tags" style="animation-direction: reverse; animation-duration: 50s;">
-              <span class="expertise-tag">Wireframing</span>
-              <span class="expertise-tag">Prototyping</span>
-              <span class="expertise-tag">Task Flows</span>
-              <span class="expertise-tag">Competitive Analysis</span>
-              <span class="expertise-tag">AI Product Thinking</span>
-              <span class="expertise-tag">Illustration</span>
-              <span class="expertise-tag">Figma</span>
-            </div>
-            <div class="expertise-tags" aria-hidden="true"
-              style="animation-direction: reverse; animation-duration: 50s;">
-              <span class="expertise-tag">Wireframing</span>
-              <span class="expertise-tag">Prototyping</span>
-              <span class="expertise-tag">Task Flows</span>
-              <span class="expertise-tag">Competitive Analysis</span>
-              <span class="expertise-tag">AI Product Thinking</span>
-              <span class="expertise-tag">Illustration</span>
-              <span class="expertise-tag">Figma</span>
-            </div>
-          </div>
+            <!-- Anthill Mound Body - soft hand-drawn silhouette -->
+            <!-- Base shadow under mound -->
+            <path d="M 62 250 C 72 266, 388 266, 398 250 C 370 240, 90 240, 62 250 Z" fill="#8b5a2b" opacity="0.3" />
 
-          <div class="marquee-row">
-            <div class="expertise-tags" style="animation-duration: 55s;">
-              <span class="expertise-tag">Adobe XD</span>
-              <span class="expertise-tag">Framer (basic)</span>
-              <span class="expertise-tag">Generative AI Tools</span>
-              <span class="expertise-tag">Miro</span>
-              <span class="expertise-tag">Notion</span>
-              <span class="expertise-tag">Autodesk Sketchbook</span>
-              <span class="expertise-tag">IBIS Paint X</span>
-            </div>
-            <div class="expertise-tags" aria-hidden="true" style="animation-duration: 55s;">
-              <span class="expertise-tag">Adobe XD</span>
-              <span class="expertise-tag">Framer (basic)</span>
-              <span class="expertise-tag">Generative AI Tools</span>
-              <span class="expertise-tag">Miro</span>
-              <span class="expertise-tag">Notion</span>
-              <span class="expertise-tag">Autodesk Sketchbook</span>
-              <span class="expertise-tag">IBIS Paint X</span>
-            </div>
+            <!-- Mound main mass -->
+            <g class="anthill-mound-shape">
+              <!-- Back shadow layer -->
+              <path class="mound-base"
+                d="M 68 252 C 75 190, 125 90, 195 62 C 220 52, 240 52, 265 62 C 335 90, 385 190, 392 252 C 350 262, 110 262, 68 252 Z"
+                fill="#c98a58" stroke="#3d2614" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+
+              <!-- Warm terracotta/caramel body -->
+              <path class="mound-body"
+                d="M 72 250 C 78 192, 128 94, 196 66 C 220 56, 240 56, 264 66 C 332 94, 382 192, 388 250 C 335 258, 125 258, 72 250 Z"
+                fill="#d99966" />
+
+              <!-- Soft top highlight -->
+              <path d="M 185 70 C 215 58, 245 58, 275 70 C 265 85, 195 85, 185 70 Z" fill="#f3c99f" opacity="0.75" />
+              <path d="M 135 125 C 170 85, 230 75, 275 90 C 230 92, 175 105, 135 125 Z" fill="#f3c99f" opacity="0.5" />
+
+              <!-- Organic hand-drawn dirt contours & textures -->
+              <path d="M 115 175 Q 160 160 210 172" stroke="#8b5a2b" stroke-width="4" stroke-linecap="round" fill="none"
+                opacity="0.45" />
+              <path d="M 255 168 Q 295 162 345 180" stroke="#8b5a2b" stroke-width="4" stroke-linecap="round" fill="none"
+                opacity="0.45" />
+              <path d="M 145 215 Q 185 205 220 212" stroke="#8b5a2b" stroke-width="3.5" stroke-linecap="round"
+                fill="none" opacity="0.4" />
+              <path d="M 270 210 Q 305 205 330 216" stroke="#8b5a2b" stroke-width="3.5" stroke-linecap="round"
+                fill="none" opacity="0.4" />
+              <path d="M 175 120 Q 225 110 280 122" stroke="#8b5a2b" stroke-width="3.5" stroke-linecap="round"
+                fill="none" opacity="0.4" />
+
+              <!-- Little cute soil pebbles around base -->
+              <circle cx="100" cy="246" r="6" fill="#8b5a2b" stroke="#3d2614" stroke-width="3" />
+              <circle cx="116" cy="251" r="4.5" fill="#c98a58" stroke="#3d2614" stroke-width="3" />
+              <circle cx="355" cy="247" r="5.5" fill="#8b5a2b" stroke="#3d2614" stroke-width="3" />
+              <circle cx="370" cy="250" r="4" fill="#c98a58" stroke="#3d2614" stroke-width="3" />
+              <circle cx="218" cy="74" r="3.5" fill="#3d2614" opacity="0.3" />
+              <circle cx="242" cy="78" r="3" fill="#3d2614" opacity="0.3" />
+
+              <!-- The cozy dark tunnel entrance at bottom center -->
+              <g class="anthill-entrance-group">
+                <ellipse cx="230" cy="242" rx="34" ry="24" fill="#2c1a0c" stroke="#3d2614" stroke-width="5"
+                  stroke-linecap="round" />
+                <ellipse cx="230" cy="244" rx="27" ry="18" fill="#180e06" />
+                <!-- Subtle ground shadow arch above entrance -->
+                <path d="M 194 240 C 196 215, 264 215, 266 240" stroke="#3d2614" stroke-width="4.5"
+                  stroke-linecap="round" fill="none" />
+              </g>
+
+              <!-- Cracking lines & dust puff (animated on tap/click, completely hidden initially) -->
+              <g class="anthill-cracks" id="anthillCracks">
+                <path class="crack crack-main" d="M 230 216 L 226 185 L 238 152 L 224 118 L 234 85 L 228 60"
+                  stroke="#241407" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+                <path class="crack crack-left" d="M 226 185 L 188 165 L 160 172" stroke="#241407" stroke-width="4"
+                  stroke-linecap="round" stroke-linejoin="round" fill="none" />
+                <path class="crack crack-right" d="M 238 152 L 278 140 L 305 146" stroke="#241407" stroke-width="4"
+                  stroke-linecap="round" stroke-linejoin="round" fill="none" />
+                <path class="crack crack-sub" d="M 224 118 L 200 102 L 182 108" stroke="#241407" stroke-width="3.5"
+                  stroke-linecap="round" stroke-linejoin="round" fill="none" />
+
+                <!-- Playful Dust-puff clouds -->
+                <g class="dust-puff-group">
+                  <ellipse class="dust-puff dp-1" cx="210" cy="180" rx="14" ry="10" fill="#f2e8d5" stroke="#deb887" stroke-width="1.5" />
+                  <ellipse class="dust-puff dp-2" cx="250" cy="150" rx="16" ry="12" fill="#faf6ef" stroke="#e8a87c" stroke-width="1.5" />
+                  <ellipse class="dust-puff dp-3" cx="180" cy="195" rx="12" ry="9" fill="#e8d5bf" stroke="#cfa574" stroke-width="1.5" />
+                  <ellipse class="dust-puff dp-4" cx="280" cy="175" rx="13" ry="9" fill="#faf6ef" stroke="#deb887" stroke-width="1.5" />
+                  <ellipse class="dust-puff dp-5" cx="230" cy="110" rx="11" ry="8" fill="#f2e8d5" stroke="#e8a87c" stroke-width="1.5" />
+                </g>
+              </g>
+            </g>
+          </svg>
+        </div>
+
+        <!-- Interactive CTA centered directly below anthill with consistent vertical gap -->
+        <div class="anthill-cta" id="anthillCta">
+          <span class="cta-label">Tap to explore</span>
+          <svg class="cta-arrow" viewBox="0 0 42 32" width="34" height="26" aria-hidden="true">
+            <path d="M 6 24 Q 20 26 26 14" fill="none" stroke="#3d2614" stroke-width="3.2" stroke-linecap="round" />
+            <path d="M 18 14 L 27 12 L 28 21" fill="none" stroke="#3d2614" stroke-width="3.2" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </div>
+      </div>
+
+      <!-- State C: Continuous Looping Ant Procession (Full-width Left to Right) -->
+      <div class="ant-procession-container" id="antProcessionContainer" aria-label="Procession of ants carrying design skills" style="display: none;">
+        <div class="ant-march-viewport">
+          <div class="ant-march-track" id="antMarchTrack">
+            <!-- Populated via JavaScript with adorable cartoon ants and candy skill chunks -->
           </div>
         </div>
       </div>
+
+      <!-- State C: Rebuild Colony Action (Horizontally centered BELOW the moving ants) -->
+      <div class="rebuild-action-wrap" id="rebuildWrap" style="display: none;">
+        <button type="button" class="rebuild-colony-btn" id="rebuildColonyBtn"
+          aria-label="Rebuild the colony and return ants home">
+          Rebuild the colony <span class="rebuild-icon" aria-hidden="true">↺</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="expertise-section reveal" id="skillsContent" style="display: none;">
+      <div class="expertise-category">
+        <!-- <h3>Design</h3> -->
+
+        <div class="marquee-row">
+          <div class="expertise-tags" style="animation-duration: 45s;">
+            <span class="expertise-tag">UX Design</span>
+            <span class="expertise-tag">UI Design</span>
+            <span class="expertise-tag">Information Architecture</span>
+            <span class="expertise-tag">User Research</span>
+            <span class="expertise-tag">Usability Testing</span>
+            <span class="expertise-tag">Interaction Design</span>
+            <span class="expertise-tag">Design Systems</span>
+          </div>
+          <div class="expertise-tags" aria-hidden="true" style="animation-duration: 45s;">
+            <span class="expertise-tag">UX Design</span>
+            <span class="expertise-tag">UI Design</span>
+            <span class="expertise-tag">Information Architecture</span>
+            <span class="expertise-tag">User Research</span>
+            <span class="expertise-tag">Usability Testing</span>
+            <span class="expertise-tag">Interaction Design</span>
+            <span class="expertise-tag">Design Systems</span>
+          </div>
+        </div>
+
+        <div class="marquee-row">
+          <div class="expertise-tags" style="animation-direction: reverse; animation-duration: 50s;">
+            <span class="expertise-tag">Wireframing</span>
+            <span class="expertise-tag">Prototyping</span>
+            <span class="expertise-tag">Task Flows</span>
+            <span class="expertise-tag">Competitive Analysis</span>
+            <span class="expertise-tag">AI Product Thinking</span>
+            <span class="expertise-tag">Illustration</span>
+            <span class="expertise-tag">Figma</span>
+          </div>
+          <div class="expertise-tags" aria-hidden="true" style="animation-direction: reverse; animation-duration: 50s;">
+            <span class="expertise-tag">Wireframing</span>
+            <span class="expertise-tag">Prototyping</span>
+            <span class="expertise-tag">Task Flows</span>
+            <span class="expertise-tag">Competitive Analysis</span>
+            <span class="expertise-tag">AI Product Thinking</span>
+            <span class="expertise-tag">Illustration</span>
+            <span class="expertise-tag">Figma</span>
+          </div>
+        </div>
+
+        <div class="marquee-row">
+          <div class="expertise-tags" style="animation-duration: 55s;">
+            <span class="expertise-tag">Adobe XD</span>
+            <span class="expertise-tag">Framer (basic)</span>
+            <span class="expertise-tag">Generative AI Tools</span>
+            <span class="expertise-tag">Miro</span>
+            <span class="expertise-tag">Notion</span>
+            <span class="expertise-tag">Autodesk Sketchbook</span>
+            <span class="expertise-tag">IBIS Paint X</span>
+          </div>
+          <div class="expertise-tags" aria-hidden="true" style="animation-duration: 55s;">
+            <span class="expertise-tag">Adobe XD</span>
+            <span class="expertise-tag">Framer (basic)</span>
+            <span class="expertise-tag">Generative AI Tools</span>
+            <span class="expertise-tag">Miro</span>
+            <span class="expertise-tag">Notion</span>
+            <span class="expertise-tag">Autodesk Sketchbook</span>
+            <span class="expertise-tag">IBIS Paint X</span>
+          </div>
+        </div>
+      </div>
+    </div>
     </div>
   </section>
   <section class="expertise-section exp-section-override" id="experience">
@@ -1002,6 +1122,8 @@
         }
       });
     }
+
+    // Anthill Tap to Explore Interactive Cracking Trigger is managed by script.js
   </script>
   <script src="script.js"></script>
 </body>
